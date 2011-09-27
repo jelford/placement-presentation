@@ -15,8 +15,8 @@
         <div class="slide cover">
             <center>
                 <br clear="all" />
-                <h1>LShift</h1>
-                <p><a href="mailto:james.elford08@imperial.ac.uk">James Elford</a></p>
+                <h1>LShift <br/><span class="asside"><a href="mailto:james.elford08@imperial.ac.uk">James Elford</a></span></h1>
+                
             </center>
         </div>
 
@@ -31,6 +31,22 @@
                         <li>BillingZilla</li>
                     </ul>
                 <li>Conclusion</li>
+            </ul>
+        </div>
+
+        <div class="slide cover">
+            <center><h1>Project Daylight</h1></center>
+        </div>
+
+        <div class="slide cover">
+            <h1>Project Daylight</h1>
+            <ul class="incremental">
+                <li>Project overview</li>
+                <li>Project goals</li>
+                <li>Project architecture</li>
+                <li>My role</li>
+                <li>Project focus: testing</li>
+                <li>Problems</li>
             </ul>
         </div>
 
@@ -123,7 +139,7 @@
             <h1>Project Daylight.problems()</h1>
             <ul class="incremental">
                 <li>Work scheduled in short time-slots</li>
-                <li>Internal clarity on precesses (client-side)</li>
+                <li>Internal clarity on processes (client-side)</li>
             </ul>
         </div>
 
@@ -135,9 +151,148 @@
                 <li>Testing, for confidence in the delivered product</li>
             </ul>
         </div>
+        
+        <div class="slide cover">
+            <center><h1>Gapfill</h1></center>
+        </div>
 
+        <div class="slide">
+            <h1>Gapfill</h1>
+            <ul class="incremental">
+                <li>Project overview</li>
+                <li>Project goals</li>
+                <li>Project architecture</li>
+                <li>My role</li>
+                <li>Problems</li>
+            </ul>
+        </div>
 
-            
+        <div class="slide">
+            <h1>Gapfill.overview()</h1>
+            <p>FSA introducing a new set of standards for Financial Services Advisors. The CII (Chartered Institute of Insurers) responsible for managing the process.</p>
+            <ul class="incremental">
+                <li>Worked with LShift before (e.g. on public-facing website)</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h1>Gapfill.goals()</h1>
+            <ul class="incremental">
+                <li>Hundreds of applications (every Financial Services Advisor in the country) to be processed quickly</li>
+                <li>Bring data from external sources for processing</li>
+                <li>Simple, efficient interface</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h1>Gapfill.architecture()</h1>
+            <p>Like Daylight, on a Microsoft stack</p>
+            <ul class="incremental">
+                <li>Wanted to learn from mistakes in Daylight</li>
+                <li>whilst being sure to keep the good bits</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h1>Gapfill.architecture()++</h1>
+            <p class="incremental">What we kept:</p>
+            <ul class="incremental">
+                <li>Extensive automated testing</li>
+                <ul>
+                    <li>Swapped for a new version of selenium but kept the framework in place</li>
+                </ul>
+                <li>Microsoft MVC</li>
+                <li>Helper classes from throughout Daylight</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h1>Gapfill.architecture()++</h1>
+            <p class="incremental">What we didn't:</p>
+            <ul class="incremental">
+                <li>Entity framework</li>
+                <ul><li>Replaced with NHibernate</li></ul>
+                <li>ASP.NET templating</li>
+                <ul><li>Replaced with Razor</li></ul>
+                <li>Custom request handling</li>
+                <ul><li>No more specialized data entry - just processing</li></ul>
+            </ul>
+        </div>
+        
+        <div class="slide">
+            <h1>Gapfill.role("James")</h1>
+            <ul class="incremental">
+                <li>Just come off similar architecture on Daylight</li>
+                <li>2nd Dev on code application</li>
+                <li>Tasks from document handling and remote data retrieval</li>
+                <li>to UI</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h1>Gapfill.problems()</h1>
+            <ul class="incremental">
+                <li>Relied on a third party to provide applicant's documents</li>
+                <ul><li>Supplied data not always how we'd expect</li></ul>
+                <li>Tight time constraints from the off</li>
+                <ul><li>Mitigated by re-using some of the good bits from Daylight</li></ul>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h1>Gapfill.conclusions()</h1>
+            <ul class="incremental">
+                <li>Don't re-invent the wheel</li>
+                <li>Fulfill tight deadlines <strong>without</strong> cutting corners</li>
+                <li>Constructive client feedback for ongoing personal investment from the team</li>
+                <li>And again: <strong>constant</strong> testing for confidence in delivery</li>
+            </ul>
+        </div>
+        
+        <div class="slide cover">
+            <center><h1>BillingZilla <br/><span class="asside">Working title</h1></center>
+        </div>
+
+        <div class="slide">
+            <h1>BillingZilla.overview()</h1>
+            <ul class="incremental">
+                <li>Internal project for invoicing and project (budget) management</li>
+                <li>Hook into and aggregate existing data</li>
+                <li>Break down time (budget) spent against milestones &#38; billing points</li>
+                <li>Mostly exploratory</li>
+                <ul><li>Because of time constraints on Daylight and Gapfill</li></ul>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h1>BillingZilla.overview()++</h1>
+            <p class="incremental">Almost entirely exploratory <strong>but:</strong></p>
+            <ul class="incremental">
+                <li>Quickly delivered some basic data breakdowns with Django</li>
+                <li>Easy to get "something working"</li>
+                <li>Difficult for other people to pick up where I left off</li>
+                <li>No testing(!)<span class="incremental">... yet</span></li>
+            </ul>
+        </div>
+
+        <div class="slide cover">
+            <center><h1>Conclusions</h1></center>
+        </div>
+        
+        <div class="slide">
+            <h1>Conclusion</h1>
+            <ul class="incremental">
+                <li>Automated testing and deployment key for confidence</li>
+                <li>also for the sake of other developers on the project</li>
+                <li>Small teams are not the same as large ones</li>
+                <li>Important to manage client expectations</li>
+            </ul>
+        </div>
+        
+        <div class="slide cover">
+            <center><h1>Questions?</h1></center>
+        </div>
+
     </body>
 </html>
 

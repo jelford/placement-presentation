@@ -1,4 +1,10 @@
 .asside {
-    color: Gray;
-    margin-left: 0.5em;
+    margin-left: 1.5em;
+    font-size: 0.5em;
+}
+
+.slide.cover h1 {
+    position: absolute;
+    top: 55%;
+    right: 10%;
 }
