@@ -138,8 +138,7 @@ var w3c_slidy = {
 
     this.toc = this.table_of_contents();
 
-    /* DISABLED */
-    //this.add_initial_prompt();
+    this.add_initial_prompt();
 
     // bind event handlers without interfering with custom page scripts
     // Tap events behave too weirdly to support clicks reliably on
@@ -276,10 +275,6 @@ var w3c_slidy = {
       w3c_slidy.hide_table_of_contents(true);
     else
       w3c_slidy.show_table_of_contents();
-  },
-
-  view_source: function() {
-    window.open("view-source:" + window.location.href);
   },
 
   // called on clicking toc entry
@@ -787,7 +782,6 @@ var w3c_slidy = {
      if (this.ns_pos || !this.ie6)
      {
        var right = this.create_element("div");
-       right.setAttribute("id", "toolbar-right");
        right.setAttribute("style", "float: right; text-align: right");
 
        counter = this.create_element("span")
@@ -801,54 +795,34 @@ var w3c_slidy = {
        // global end of slide indicator
        this.eos = this.create_element("span");
        this.eos.innerHTML = "* ";
-       /* DISABLED */
-       //left.appendChild(this.eos);
+       left.appendChild(this.eos);
 
        var help = this.create_element("a");
        help.setAttribute("href", this.help_page);
        help.setAttribute("title", this.localize(this.help_text));
-       help.innerHTML = "&#x3f;"; //this.localize("help?");
-       /* DISABLED */
-       //left.appendChild(help);
+       help.innerHTML = this.localize("help?");
+       left.appendChild(help);
        this.help_anchor = help;  // save for focus hack
 
        var gap1 = document.createTextNode(" ");
        left.appendChild(gap1);
 
        var contents = this.create_element("a");
-       contents.setAttribute("id", "contents");
-       contents.setAttribute("class", "toolbar-icon");
        contents.setAttribute("href", "javascript:w3c_slidy.toggle_table_of_contents()");
        contents.setAttribute("title", this.localize("table of contents"));
-       contents.innerHTML = "&#x1f4cb;"; //this.localize("contents?");
+       contents.innerHTML = this.localize("contents?");
        left.appendChild(contents);
 
-       var viewSource = this.create_element("a");
-       viewSource.setAttribute("id", "view-source");
-       viewSource.setAttribute("class", "toolbar-icon");
-       viewSource.setAttribute("href", "javascript:w3c_slidy.view_source()");
-       viewSource.setAttribute("title", this.localize("view slide source"));
-       viewSource.innerHTML = "&#x270f;";
-       /* DISABLED */
-       //left.appendChild(viewSource);
-
        var gap2 = document.createTextNode(" ");
-       /* DISABLED */
-       //left.appendChild(gap2);
+       left.appendChild(gap2);
 
        var copyright = this.find_copyright();
 
        if (copyright)
        {
-         var logo = this.create_element("img");
-         logo.id  = "toolbar-logo";
-         logo.alt = "";
-         logo.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKAQMAAAC3/F3+AAAABlBMVEUAmczs7+8MQZQeAAAAAnRSTlP/AOW3MEoAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAF0lEQVQI12MwYGAAIhswMgYj+wMgBAYALBwDPUOVT+0AAAAASUVORK5CYII=";
-
          var span = this.create_element("span");
          span.className = "copyright";
-         span.appendChild(logo);
-         span.innerHTML += "&nbsp;" + copyright;
+         span.innerHTML = copyright;
          left.appendChild(span);
        }
 
@@ -879,54 +853,34 @@ var w3c_slidy = {
 
        var sp = this.create_element("span");
        sp.innerHTML = "&nbsp;&nbsp;*&nbsp;";
-       /* DISABLED */
-       //this.toolbar.appendChild(sp);
+       this.toolbar.appendChild(sp);
        this.eos = sp;  // end of slide indicator
 
        var help = this.create_element("a");
        help.setAttribute("href", this.help_page);
        help.setAttribute("title", this.localize(this.help_text));
-       help.innerHTML = "&#x3f;"; //this.localize("help?");
-       /* DISABLED */
-       //this.toolbar.appendChild(help);       
+       help.innerHTML = this.localize("help?");
+       this.toolbar.appendChild(help);
        this.help_anchor = help;  // save for focus hack
 
        var gap1 = document.createTextNode(" ");
        this.toolbar.appendChild(gap1);
 
        var contents = this.create_element("a");
-       contents.setAttribute("id", "contents");
-       contents.setAttribute("class", "toolbar-icon");
        contents.setAttribute("href", "javascript:toggleTableOfContents()");
        contents.setAttribute("title", this.localize("table of contents".localize));
-       contents.innerHTML = "&#x1f4cb;"; //this.localize("contents?");
+       contents.innerHTML = this.localize("contents?");
        this.toolbar.appendChild(contents);
 
-       var viewSource = this.create_element("a");
-       viewSource.setAttribute("id", "view-source");
-       viewSource.setAttribute("class", "toolbar-icon");
-       viewSource.setAttribute("href", "javascript:w3c_slidy.view_source()");
-       viewSource.setAttribute("title", this.localize("view slide source"));
-       viewSource.innerHTML = "&#x270f;";
-       /* DISABLED */
-       //this.toolbar.appendChild(viewSource);
-
        var gap2 = document.createTextNode(" ");
-       /* DISABLED */
-       //this.toolbar.appendChild(gap2);
+       this.toolbar.appendChild(gap2);
 
        var copyright = this.find_copyright();
 
        if (copyright)
        {
-         var logo = this.create_element("img");
-         logo.id  = "toolbar-logo";
-         logo.alt = "";
-         logo.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKAQMAAAC3/F3+AAAABlBMVEUAmczs7+8MQZQeAAAAAnRSTlP/AOW3MEoAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAF0lEQVQI12MwYGAAIhswMgYj+wMgBAYALBwDPUOVT+0AAAAASUVORK5CYII=";
-
          var span = this.create_element("span");
-         span.appendChild(logo);
-         span.innerHTML += "&nbsp;" + copyright;
+         span.innerHTML = copyright;
          span.style.color = "black";
          span.style.marginLeft = "0.5em";
          this.toolbar.appendChild(span);

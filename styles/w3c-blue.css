@@ -279,7 +279,7 @@ ul li {
 
 ol li { 
   margin: 0.1em 0em 0.6em 1.5em;
-/*  padding: 0 0 0 0px; */
+  padding: 0 0 0 0px;
   line-height: 140%;
 }
 
@@ -461,9 +461,9 @@ div.slide.cover a {
 }
 
 div.slide.cover a:visited { color: white }
-div.slide.cover a:link    { color: white }
-div.slide.cover a:hover   { color: yellow; text-decoration: underline }
-div.slide.cover a:active  { color: yellow; text-decoration: underline }
+div.slide.cover a:link { color: white }
+div.slide.cover a:hover { color: yellow; text-decoration: underline }
+div.slide.cover a:active { color: yellow; text-decoration: underline }
 
 div.slide.cover a:hover, div.slide.cover a:active {
   color: yellow; text-decoration: underline;
